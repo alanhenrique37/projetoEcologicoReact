@@ -4,9 +4,9 @@ import { MaterialIcons } from "@expo/vector-icons"
 type Props = PressableProps & {
     data:{
         id: string
-        nome: string
-        telefone: string
-        endereco: string
+        dataResiduo: string
+        categoria: string
+        peso: string
     }
     onDelete: () => void
     onEditar: () => void
@@ -17,8 +17,8 @@ export function Cliente({ data, onDelete, onEditar, ...rest}:Props){
     return (
         <View style={styles.container}>
             <Pressable style={styles.fundo} {...rest}>
-                <Text style={styles.texto}>
-                    {data.id} - {data.nome} - {data.telefone} - {data.endereco}
+                <Text >
+                    {data.id} - {data.dataResiduo} - {data.categoria} - {data.peso}
                 </Text>
 
                 <TouchableOpacity onPress={onEditar}>
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 50,
     },
+
     fundo:{
         width: "80%",
         backgroundColor: "#CECECE",
